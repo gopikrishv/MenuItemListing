@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "ictazurekc-01b0"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "ictazurekc-01b0"
+  template:
+    metadata:
+      labels:
+        app: "ictazurekc-01b0"
+    spec:
+      containers:
+        - name: "ictazurekc-01b0"
+          image: "ictazurepractice.azurecr.io/ictazurekc"
+          ports:
+          - containerPort: 80
